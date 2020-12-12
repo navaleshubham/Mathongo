@@ -1,14 +1,12 @@
 require('dotenv').config();
 const nodemailer = require('nodemailer')
 const express = require('express')
-const https = require('https');
 const schedule = require('node-schedule');
 const app = express()
 const cors = require('cors')
 var fs = require('fs');
 var dsv = require('d3-dsv');
 const bodyParser = require('body-parser');
-const { json } = require('body-parser');
 app.use(express.json());
 app.use(bodyParser.json());
 app.use(cors());
@@ -324,11 +322,13 @@ app.get('/:email', (req, res) => {
   }, 1000)
 })
 
-const port = process.env.PORT || 3000;
+var j = schedule.scheduleJob(t, function(){
+  getautocall()
+});
+
+const port = process.env.PORT || 4000;
 const server = app.listen(port, function () {
   console.log('Listening on port ' + port);
   console.log(server.address())
 });  
-var j = schedule.scheduleJob(t, function(){
-  getautocall()
-});
+
