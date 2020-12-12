@@ -1,0 +1,2 @@
+_id,sl_no,order_id,payment_id,createdAt,updatedAt,coupon_amount,paid_status,phone,email,utm_params_source,utm_params_medium,utm_params_campaign,utm_params_term
+-Scn3Xbss,1,-Scn3Xbss,276159121,2020-12-12T11:04:24.648Z,2020-12-09T11:07:03.475Z,OFF50,true,1234567890,john.doe@email.com,google,seo_pages,sale,
